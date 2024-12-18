@@ -14,3 +14,9 @@
 ![user-flow-Страница 2 drawio](https://github.com/user-attachments/assets/6a506edb-f391-40aa-be30-036b47bcb66d)
 
 *_Примеры экранов_*
+![image](https://github.com/user-attachments/assets/f146d1a1-bff5-4872-b6d3-a85da6863074)
+![image](https://github.com/user-attachments/assets/0d707e3a-b455-40b3-a3fa-ef4fa47b9afe)
+![image](https://github.com/user-attachments/assets/13daec45-a762-456b-8b91-54489ba0ac29)
+![image](https://github.com/user-attachments/assets/db35801d-6632-43e5-b065-ac64a72d44b7)
+![image](https://github.com/user-attachments/assets/aa976adf-a8bf-42f2-834c-f5af98549c32)
+![image](https://github.com/user-attachments/assets/0ff15340-dab1-4583-bf1d-86323b8d1abd)
