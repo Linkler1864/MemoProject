@@ -6,3 +6,11 @@
 ![java](https://github.com/user-attachments/assets/dd556998-3258-4b1c-9524-d8b52a6f2da9)
 ![UML drawio](https://github.com/user-attachments/assets/f21d5af0-ce40-43f3-8d18-f1e59ffe1f3f)
 ![UML-Страница 2 drawio](https://github.com/user-attachments/assets/b70c59b5-afc4-4b8a-b081-a0b7882f0641)
+
+**Пользовательский интерфейс**
+
+*_User flow_ диаграммы*
+![user-flow-Page-1 drawio](https://github.com/user-attachments/assets/f75caa83-62ac-43e5-9c00-e016dc14abd2)
+![user-flow-Страница 2 drawio](https://github.com/user-attachments/assets/6a506edb-f391-40aa-be30-036b47bcb66d)
+
+*_Примеры экранов_*
