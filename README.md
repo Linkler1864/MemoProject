@@ -25,3 +25,56 @@
 ![image](https://github.com/user-attachments/assets/fc06509f-e7d4-429b-b5e8-b34c94c53850)
 ![image](https://github.com/user-attachments/assets/24223fc9-93d1-4afc-ac94-8c05257c7470)
 ![image](https://github.com/user-attachments/assets/53c9b8b6-7469-49e3-b790-4f0ad0c1ef30)
+
+**Документация**
+В файле api-docs
+
+![image](https://github.com/user-attachments/assets/5be2b293-7e7d-48e1-82fa-4e013d317375)
+![image](https://github.com/user-attachments/assets/61993da6-802c-4744-80ca-41480ce51372)
+
+**Оценка качества кода**
+![image](https://github.com/user-attachments/assets/60e91fc0-3158-4303-b9de-bd2534203eb1)
+![image](https://github.com/user-attachments/assets/b62fc06a-182c-4bec-904a-838d0ab9235d)
+![image](https://github.com/user-attachments/assets/35971511-9ed5-4bec-8dc3-2c470694c5e6)
+Процент закомментированности кода: 6.4%
+
+**Тестирование**
+![image](https://github.com/user-attachments/assets/17bc9d81-248c-46f6-bd11-5f621a425a6c)
+Пример unit теста:
+@Test
+public void testFindAll() {
+    
+    Department department1 = new Department("HR");
+    Department department2 = new Department("Finance");
+    when(departmentRepository.findAll(Sort.by(Sort.Direction.DESC, "id")))
+            .thenReturn(Arrays.asList(department1, department2));
+
+    
+    var departments = departmentService.findAll();
+
+    
+    assertNotNull(departments);
+    assertEquals(2, departments.size());
+    assertEquals("HR", departments.get(0).getName());
+}
+
+Пример интеграционного теста с использованием Spring Boot и Junit:
+@Test
+@WithMockUser(roles = "ADMIN")
+public void testUpdate() throws Exception {
+    when(toConverter.convert(any(DepartmentDto.class))).thenReturn(department);
+    when(departmentService.update(eq("1"), any(Department.class))).thenReturn(department);
+    when(toDtoConverter.convert(any(Department.class))).thenReturn(departmentDto);
+
+    mockMvc.perform(put("/departments/1")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(new ObjectMapper().writeValueAsString(departmentDto)))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.success").value(true))
+            .andExpect(jsonPath("$.statusCode").value(StatusCode.SUCCESS))
+            .andExpect(jsonPath("$.data.id").value("1"))
+            .andExpect(jsonPath("$.data.name").value("HR"))
+            .andExpect(jsonPath("$.data.description").value("Human Resources"));
+
+    verify(departmentService, times(1)).update(eq("1"), any(Department.class));
+}
